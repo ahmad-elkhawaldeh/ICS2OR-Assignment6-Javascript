@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> my webpage </title>
+    <meta charset="utf-8">
+    <meta name="descirption" content="webpage, with buttons ">
+    <meta name="keywords" content="Mths,website">
+    <meta name="author" content="Ahmad-El-khawaldeh">
+    <meta name="viewport" content="width=device-width,intial-scale1.0">
+   </head>
+        <body> 
+           <head>
+       <script>
+          
+           function calculateCost()
+           {
+              
+               let type = document.getElementById("pizza");
+               type = type.options[type.selectedIndex].value;
+              
+             
+               let  toppings = document.getElementById("toppings");
+               toppings = toppings.options[toppings.selectedIndex].value;
+              
+             
+               let  subtotal = 0
+              
+               
+               if(type == "1")
+               {
+                   
+                   subtotal = subtotal + 6.00;
+               }
+              
+               else if(type == "2")
+               {
+                  
+                   subtotal = subtotal + 10.00;
+               }
+              
+               if(toppings == "1")
+               {
+                   
+                   subtotal = subtotal + 1.00
+               }
+               
+               else if(toppings == "2")
+               {
+                   
+                   subtotal = subtotal + 1.75;
+               }
+             
+               else if(toppings == "3")
+               {
+                  
+                   subtotal = subtotal + 2.50;
+               }
+              
+               else if(toppings == "4")
+               {
+                  
+                   subtotal = subtotal + 3.35;
+               }
+            
+               let tax = subtotal * .13;
+              
+              
+               let  total = subtotal + tax;
+              
+              
+               document.getElementById("subtotal").innerHTML = ": $" + subtotal.toFixed(2);
+              
+             
+               document.getElementById("tax").innerHTML = ": $" + tax.toFixed(2);
+              
+
+               document.getElementById("total").innerHTML = ": $" + total.toFixed(2);
+           }
+       </script>
+   </head>
+   <body>
+      
+       <table>
+          
+           <th>Order Pizza</th>
+           
+           <tr>
+               <td>Type: </td>
+               <td>
+                   <!--options for pizza-->
+                   <select id = "pizza">
+                       <option value = "0" selected>Select</option>
+                       <option value = "1">Large</option>
+                       <option value = "2">Extra Large</option>
+                   </select>
+               </td>
+           </tr>
+         
+           <tr>
+               <td>Toppings: </td>
+               <td>
+                   
+                   <select id = "toppings">
+                       <option value = "0" selected>Select</option>
+                       <option value = "1">1</option>
+                       <option value = "2">2</option>
+                       <option value = "3">3</option>
+                       <option value = "4">4</option>
+                   </select>
+               </td>
+           </tr>
+          
+           <tr>
+               <td></td>
+            
+               <td><input type = "submit" value = "Submit" onclick = "calculateCost()"></td>
+           </tr>
+
+           <tr>
+               <td>Sub Total</td>
+               <td>
+                 
+                   <label id="subtotal">:</label><br>
+               </td>
+           </tr>
+     
+           <tr>
+               <td>Tax</td>
+               <td>
+              
+                   <label id="tax">:</label><br>
+               </td>
+           </tr>
+         
+           <tr>
+               <td>Total</td>
+               <td>
+            
+                   <label id="total">:</label><br>
+               </td>
+           </tr>
+       </table>
+   </body>
+          
+          
+          
+           
